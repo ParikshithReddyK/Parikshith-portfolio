@@ -11,7 +11,7 @@ export default function Skills() {
         <h2 className="font-display text-3xl md:text-4xl text-bone font-medium mb-6">
           What I build with.
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {skillCategories.map((group) => (
             <div
               key={group.category}

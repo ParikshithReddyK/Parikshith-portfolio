@@ -2,46 +2,76 @@ import Layout from "../components/Layout";
 import GlowOrb from "../components/GlowOrb";
 import { profile } from "../data/content";
 
+const rows = [
+  { label: "Email", value: profile.email, href: `mailto:${profile.email}` },
+  { label: "Location", value: profile.location },
+  {
+    label: "GitHub",
+    value: profile.github.replace("https://", ""),
+    href: profile.github,
+  },
+  {
+    label: "LinkedIn",
+    value: profile.linkedin.replace("https://", ""),
+    href: profile.linkedin,
+  },
+];
+
 export default function Contact() {
   return (
-    <Layout left={profile.base} right="CONTACT / VOL.04">
-      <GlowOrb className="w-[450px] h-[450px] top-1/4 left-1/2 -translate-x-1/2" />
+    <Layout left={profile.base} right="CONTACT / VOL.07">
+      <GlowOrb className="w-[450px] h-[450px] top-1/4 right-0" />
 
-      <div className="relative flex-1 flex flex-col items-center justify-center text-center px-6 animate-fade-in">
+      <div className="relative flex-1 flex flex-col justify-center px-6 md:px-10 animate-fade-in">
         <p className="font-mono text-xs tracking-widest text-ember uppercase mb-4">
           Let's talk
         </p>
 
-        <h2 className="font-display text-3xl md:text-5xl text-bone font-medium max-w-xl">
-          Open to backend, systems, and research conversations.
+        <h2 className="font-display text-3xl md:text-5xl text-bone font-medium max-w-xl leading-tight">
+          {profile.contactTagline}
         </h2>
 
-        <div className="mt-8 flex flex-col md:flex-row items-center gap-4">
-          <a
-            href={`mailto:${profile.email}`}
-            className="bg-bone text-void font-mono text-xs tracking-widest uppercase px-5 py-3 rounded hover:bg-ember transition-colors"
-          >
-            {profile.email}
-          </a>
+        <div className="mt-8 space-y-4 max-w-md">
+          {rows.map((row) =>
+            row.href ? (
+              <a
+                key={row.label}
+                href={row.href}
+                target={row.href.startsWith("http") ? "_blank" : undefined}
+                rel={row.href.startsWith("http") ? "noreferrer" : undefined}
+                className="flex items-center justify-between border-b border-line pb-3 group"
+              >
+                <span className="font-mono text-[10px] tracking-widest text-mute uppercase">
+                  {row.label}
+                </span>
 
-          <a
-            href={profile.github}
-            target="_blank"
-            rel="noreferrer"
-            className="font-mono text-xs tracking-widest uppercase text-mute hover:text-ember transition-colors"
-          >
-            GitHub →
-          </a>
+                <span className="font-mono text-sm text-bone group-hover:text-ember transition-colors">
+                  {row.value}
+                </span>
+              </a>
+            ) : (
+              <div
+                key={row.label}
+                className="flex items-center justify-between border-b border-line pb-3"
+              >
+                <span className="font-mono text-[10px] tracking-widest text-mute uppercase">
+                  {row.label}
+                </span>
 
-          <a
-            href={profile.linkedin}
-            target="_blank"
-            rel="noreferrer"
-            className="font-mono text-xs tracking-widest uppercase text-mute hover:text-ember transition-colors"
-          >
-            LinkedIn →
-          </a>
+                <span className="font-mono text-sm text-bone">
+                  {row.value}
+                </span>
+              </div>
+            )
+          )}
         </div>
+
+        <a
+          href={profile.resumeUrl}
+          className="mt-8 inline-block w-fit bg-bone text-void font-mono text-xs tracking-widest uppercase px-5 py-3 rounded hover:bg-ember transition-colors"
+        >
+          Download Resume →
+        </a>
       </div>
     </Layout>
   );

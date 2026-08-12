@@ -11,7 +11,6 @@ interface NavItem {
   { to: "/skills", label: "Skills" },
   { to: "/experience", label: "Experience" },
   { to: "/projects", label: "Projects" },
-  { to: "/research", label: "Research" },
   { to: "/certifications", label: "Certs" },
   { to: "/contact", label: "Contact" },
 ];
