@@ -46,6 +46,7 @@ export default function Navbar() {
 
       <a
         href={profile.resumeUrl}
+        download="Parikshith_Reddy_Resume.pdf"
         target="_blank"
         rel="noreferrer"
         className="font-mono text-xs tracking-widest uppercase border border-line rounded px-3 py-2 text-bone hover:border-ember hover:text-ember transition-colors"

@@ -43,7 +43,7 @@ export const profile: Profile = {
   email: "parikshithkumbam@gmail.com",
   github: "https://github.com/ParikshithReddyK",
   linkedin: "https://linkedin.com/in/parikshith-reddy/",
-  resumeUrl: "#",
+  resumeUrl: "/resume.pdf",
 };
 
 export const signalFeed: string[] = [
@@ -197,6 +197,23 @@ export const experiences: Experience[] = [
 ];
 
 export const certifications: Certification[] = [
-  // Add your real certifications here, e.g.:
-  // { title: "AWS Developer Associate", platform: "Udemy", issuer: "Amazon Web Services", date: "2024", link: "#" },
+
+    {
+    title: "Java Full Stack Development",
+    issuer: "JSpiders, Hyderabad",
+    date: "2023",
+  },
+  {
+    title: "Spring Boot 4, Spring 7 & Hibernate for Beginners",
+    platform: "Udemy",
+    issuer: "Udemy",
+    date: "2025",
+  },
+  {
+    title: "Ultimate AWS Certified Solutions Architect Associate 2026",
+    platform: "Udemy",
+    issuer: "Udemy",
+    date: "2026",
+  },
+
 ];
