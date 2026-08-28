@@ -91,7 +91,7 @@ export const projects: Project[] = [
     description:
       "AI system that ranks employees for tasks based on skill match, availability, workload, and history — with SHAP explainability.",
     stack: ["Java", "Spring Boot", "Python", "scikit-learn", "SHAP", "FastAPI"],
-    // link: "ADD_GITHUB_URL_HERE",
+     link: "https://github.com/ParikshithReddyK/AI-resource-Scheduler",
   },
   {
     number: "04",
